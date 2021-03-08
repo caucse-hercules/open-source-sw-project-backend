@@ -36,9 +36,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: AKIATBPP3NIVCYO5QG5F
-          aws-secret-access-key: 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
-          aws-region: ap-northeast-2
+          aws-access-key-id: $
+          aws-secret-access-key: $
+          aws-region: $
           
       - name: Upload to S3
         run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://hercules-server-deploy/$PROJECT_NAME/$GITHUB_SHA.zip
