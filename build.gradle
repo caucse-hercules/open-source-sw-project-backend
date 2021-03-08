@@ -2,11 +2,19 @@ plugins {
     id 'org.springframework.boot' version '2.4.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id 'war'
 }
 
 group = 'com.hercules'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
+apply plugin : 'war'
+
+bootWar {
+    archiveBaseName = "springboot"
+    archiveVersion = '1.0.0-SNAPSHOT'
+}
 
 configurations {
     compileOnly {
@@ -19,7 +27,6 @@ repositories {
 }
 
 dependencies {
-    compileOnly group: 'javax.servlet', name: 'servlet-api', version: '4.0.1'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
